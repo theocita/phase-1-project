@@ -21,9 +21,12 @@
 
 // }
 
-const form = document.querySelector("#create-show-list")
+const showList = document.querySelector("#create-show-list")
 
 document.addEventListener("DOMContentLoaded", () => {
-    showList.addEventListener("submit", showList)
+    showList.addEventListener("submit", submitShow)
 });
 
+function submitShow(e) {
+    e.preventDeafault()
+}
