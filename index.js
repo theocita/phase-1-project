@@ -28,5 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function submitShow(e) {
-    e.preventDeafault()
+   e.preventDeafault()
+
+    const newShow = document.getElementById("new-show-name").value
+    const li = document.createElement("li")
+    li.textContent = newShow
 }
