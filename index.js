@@ -1,4 +1,5 @@
 const url = `https://api.tvmaze.com/shows`
+const input = document.getElementById("show-name")
 
 // document.addEventListener('DOMContentLoaded', () => {
 //     loadShows()
@@ -24,10 +25,13 @@ const url = `https://api.tvmaze.com/shows`
 // const showList = document.querySelector("#create-show-list")
 
 document.addEventListener("DOMContentLoaded", () => {
-    
+
     fetch(url)
     .then(res => res.json())
-    .then(data => console.log("data", data))
+    .then(shows => {
+        const names = shows.map(show => show.name).join("\n");
+        input.innerHTML = names
+    })
     // showList.addEventListener("submit", submitShow)
 });
 
