@@ -1,16 +1,15 @@
 
 const init = () => {
 
-//let url = `https://api.tvmaze.com/singlesearch/shows` 
+//let url = `https://api.tvmaze.com/shows` 
 
 const inputForm = document.querySelector('form')
 
 inputForm.addEventListener('submit', (e) => {
     e.preventDefault()
+    const input = document.querySelector("input#searchByID")
 
-    const input = document.getElementById("show-name")
-
-    fetch( `https://api.tvmaze.com/search/shows?q=girls`)
+    fetch(`https://api.tvmaze.com/shows/${input.value}`)
     .then(res => res.json())
     .then(shows => {
         
