@@ -1,21 +1,32 @@
 
 const init = () => {
 
-//let url = `https://api.tvmaze.com/shows` 
-
 const inputForm = document.querySelector('form')
 
 inputForm.addEventListener('submit', (e) => {
     e.preventDefault()
-    const input = document.querySelector("input#searchByID")
-
-    fetch(`https://api.tvmaze.com/shows/${input.value}`)
+    const input = document.querySelector("#show-name")
+  
+    fetch(`https://api.tvmaze.com/shows`)
     .then(res => res.json())
     .then(shows => {
         
         const names = shows.map(show => show.name).join("\n");
         input.innerHTML = names
         })
+
+    })
+}
+
+
+document.addEventListener("DOMContentLoaded", init) 
+// function submitShow(e) {
+//    e.preventDefault()
+
+//     // const newShow = document.getElementById("show-name").value
+//     // const li = document.createElement("li")
+//     // li.textContent = newShow
+// // }
 // document.addEventListener('DOMContentLoaded', () => {
 //     loadShows()
 
@@ -39,15 +50,4 @@ inputForm.addEventListener('submit', (e) => {
 
 // const showList = document.querySelector("#create-show-list")
    // showList.addEventListener("submit", submitShow)
-    })
-}
-
-
-document.addEventListener("DOMContentLoaded", init) 
-// function submitShow(e) {
-//    e.preventDefault()
-
-//     // const newShow = document.getElementById("show-name").value
-//     // const li = document.createElement("li")
-//     // li.textContent = newShow
-// // }
+ 
