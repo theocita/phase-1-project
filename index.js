@@ -11,7 +11,7 @@ inputForm.addEventListener('submit', (e) => {
     .then(res => res.json())
     .then(shows => {
         
-        const names = shows.map(show => show.name).join("\n");
+        const names = shows.map(show => show.name)
         input.innerHTML = names
         })
 
