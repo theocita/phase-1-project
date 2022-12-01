@@ -8,20 +8,19 @@ inputForm.addEventListener('submit', (e) => {
     const input = document.querySelector("#new-show-name")
   
     fetch(`https://api.tvmaze.com/shows/${input.value}`)
-    console.log("input", input.value)
     .then(res => res.json())
-    .then(shows => {
+    .then(data => {
 
-        // const name = document.querySelector('show-name')
-        // name.innerText = name.title
+        const name = document.querySelector('show-name')
+       name.innerText = data.name
     
 
         // const showList = document.getElementById("show-name")
         // const li = document.createElement("li")
         // li.textContent = showList      
 
-        const names = shows.map(show => show.name).join("");
-        input.innerHTML = names
+        // const names = shows.map(show => show.name).join("");
+        // input.innerHTML = names
      })
 
     })
