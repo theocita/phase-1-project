@@ -7,8 +7,10 @@ const inputForm = document.querySelector('form')
         e.preventDefault()
         const input = document.querySelector("#new-show-name")
         const li = document.createElement("li")
-     
-    
+        const deleteButton = document.createElement("button")
+        deleteButton.textContent = "X"
+
+  
         fetch(`https://api.tvmaze.com/shows/${input.value}`)
         .then(res => res.json())
         .then(data => {
