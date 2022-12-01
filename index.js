@@ -10,7 +10,8 @@ const inputForm = document.querySelector('form')
         const deleteButton = document.createElement("button")
         deleteButton.textContent = "X"
 
-  
+        deleteButton.addEventListener("click", () => li.remove)
+
         fetch(`https://api.tvmaze.com/shows/${input.value}`)
         .then(res => res.json())
         .then(data => {
