@@ -12,18 +12,15 @@ const inputForm = document.querySelector('#create-show-list')
         fetch(`https://api.tvmaze.com/shows/${input.value}`)
         .then(res => res.json())
         .then(data => {
-            const li = document.createElement("li")
-            const name = document.querySelector("#showname")     
+            const li = document.createElement("li")   
             li.innerText = data.name
 
             const deleteButton = document.createElement("button")
-
+            document.querySelector("#list").appendChild(li)
             deleteButton.addEventListener("click", handleDelete)
             deleteButton.textContent = "X"
-            li.textContent = `${name}`
-            console.log("name", name)
             li.appendChild(deleteButton)
-            document.querySelector("#list").appendChild(li)
+            
             
            
             // li.append(deleteButton) 
