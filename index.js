@@ -6,7 +6,6 @@ const inputForm = document.querySelector('#create-show-list')
     inputForm.addEventListener('submit', (e) => {
         e.preventDefault()
         const input = document.querySelector("#new-show-name")
-        // handletoDo(e.target.new_show_name.value)
        
   
         fetch(`https://api.tvmaze.com/shows/${input.value}`)
@@ -20,12 +19,7 @@ const inputForm = document.querySelector('#create-show-list')
             deleteButton.addEventListener("click", handleDelete)
             deleteButton.textContent = "X"
             li.appendChild(deleteButton)
-            
-            
-           
-            // li.append(deleteButton) 
-            // showname.appendChild(li)
-            // inputForm.reset()
+
         }) 
          
     })
